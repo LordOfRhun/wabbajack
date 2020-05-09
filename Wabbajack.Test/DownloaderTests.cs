@@ -528,7 +528,6 @@ namespace Wabbajack.Test
             return state.ToJson().FromJsonString<T>();
         }
         
-        /* TODO : Disabled for now
         [Fact]
         public async Task TestUpgrading()
         {
@@ -548,7 +547,7 @@ namespace Wabbajack.Test
             Utils.Log($"Getting Hash for {(long)archive.Hash}");
             Assert.True(await DownloadDispatcher.DownloadWithPossibleUpgrade(archive, dest));
             Assert.Equal(Hash.FromBase64("gCRVrvzDNH0="), await dest.FileHashCachedAsync());
-        }*/
+        }
         
         class TestInstaller : AInstaller
         {

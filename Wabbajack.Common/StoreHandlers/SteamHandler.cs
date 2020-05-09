@@ -162,7 +162,11 @@ namespace Wabbajack.Common.StoreHandlers
 
                     if (!gotID || !game.Path.IsDirectory) return;
 
-                    var gameMeta = GameRegistry.Games.Values.FirstOrDefault(g => g.SteamIDs?.Contains(game.ID) ?? false);
+                    var gameMeta = GameRegistry.Games.Values.FirstOrDefault(g =>
+                    {
+                        return (g.SteamIDs?.Contains(game.ID) ?? false)
+                            && (g.RequiredFiles?.TrueForAll(file => game.Path.Combine(file).Exists) ?? true);
+                    });
 
                     if (gameMeta == null)
                     {

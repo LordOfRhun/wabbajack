@@ -25,7 +25,6 @@ namespace Wabbajack.Lib.Downloaders
             new BethesdaNetDownloader(),
             new TESAllianceDownloader(),
             new YouTubeDownloader(),
-            new WabbajackCDNDownloader(),
             new HTTPDownloader(),
             new ManualDownloader(),
         };
@@ -33,8 +32,7 @@ namespace Wabbajack.Lib.Downloaders
         public static readonly List<IUrlInferencer> Inferencers = new List<IUrlInferencer>()
         {
             new BethesdaNetInferencer(),
-            new YoutubeInferencer(),
-            new WabbajackCDNInfluencer()
+            new YoutubeInferencer()
         };
 
         private static readonly Dictionary<Type, IDownloader> IndexedDownloaders;

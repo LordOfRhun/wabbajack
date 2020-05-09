@@ -398,7 +398,6 @@ namespace Wabbajack.Test
             
         }
 
-        /* TODO : Disabled For Now
         [Fact]
         public async Task CanSourceFilesFromStockGameFiles()
         {
@@ -432,7 +431,6 @@ namespace Wabbajack.Test
             
             Consts.TestMode = true;
         }
-        */
         
         [Fact]
         public async Task NoMatchIncludeIncludesNonMatchingFiles() 

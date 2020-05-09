@@ -126,7 +126,6 @@ namespace Wabbajack
                 var fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
                 VersionDisplay = $"v{fvi.FileVersion}";
                 Utils.Log($"Wabbajack Version: {fvi.FileVersion}");
-                var _ = Metrics.Send("started_wabbajack", fvi.FileVersion);
             }
             catch (Exception ex)
             {
@@ -143,8 +142,6 @@ namespace Wabbajack
                 execute: () => NavigateTo(SettingsPane.Value));
 
             OpenTerminalCommand = ReactiveCommand.Create(() => OpenTerminal());
-            
-
         }
 
         private void OpenTerminal()
