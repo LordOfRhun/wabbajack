@@ -134,6 +134,11 @@ namespace Wabbajack.Common
 
             return attrs.Length > 0 ? ((DescriptionAttribute)attrs[0]).Description : enumerationValue.ToString();
         }
+
+        public static IEnumerable<T> GetAllItems<T>() where T : struct
+        {
+           return Enum.GetValues(typeof(T)).Cast<T>();
+        }
     }
 
     public class GameRegistry
@@ -255,13 +260,13 @@ namespace Wabbajack.Common
                     Game = Game.Fallout3,
                     NexusName = "fallout3",
                     NexusGameId = 120,
-                    MO2Name = "fallout3",
+                    MO2Name = "Fallout 3",
                     MO2ArchiveName = "fallout3",
                     SteamIDs = new List<int> {22300, 22370}, // base game and GotY
+                    GOGIDs = new List<int>{1454315831}, // GotY edition
                     RequiredFiles = new List<string>
                     {
-                        "falloutlauncher.exe",
-                        "data\\fallout3.esm"
+                        "Fallout3.exe"
                     },
                     MainExecutable = "Fallout3.exe"
                 }
